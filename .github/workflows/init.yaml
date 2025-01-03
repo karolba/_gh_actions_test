@@ -1,0 +1,61 @@
+on:
+  push:
+    branches: ['main']
+
+jobs:
+  job1:
+    runs-on: ubuntu-24.04
+    steps:
+      - run: echo what
+  job2:  { needs: [job1 ], runs-on: ubuntu-24.04, steps: [ {run: echo what} ] }
+  job3:  { needs: [job2 ], runs-on: ubuntu-24.04, steps: [ {run: echo what} ] }
+  job4:  { needs: [job3 ], runs-on: ubuntu-24.04, steps: [ {run: echo what} ] }
+  job5:  { needs: [job4 ], runs-on: ubuntu-24.04, steps: [ {run: echo what} ] }
+  job6:  { needs: [job5 ], runs-on: ubuntu-24.04, steps: [ {run: echo what} ] }
+  job7:  { needs: [job6 ], runs-on: ubuntu-24.04, steps: [ {run: echo what} ] }
+  job8:  { needs: [job7 ], runs-on: ubuntu-24.04, steps: [ {run: echo what} ] }
+  job9:  { needs: [job8 ], runs-on: ubuntu-24.04, steps: [ {run: echo what} ] }
+  job10: { needs: [job9 ], runs-on: ubuntu-24.04, steps: [ {run: echo what} ] }
+  job11: { needs: [job10], runs-on: ubuntu-24.04, steps: [ {run: echo what} ] }
+  job12: { needs: [job11], runs-on: ubuntu-24.04, steps: [ {run: echo what} ] }
+  job13: { needs: [job12], runs-on: ubuntu-24.04, steps: [ {run: echo what} ] }
+  job14: { needs: [job13], runs-on: ubuntu-24.04, steps: [ {run: echo what} ] }
+  job15: { needs: [job14], runs-on: ubuntu-24.04, steps: [ {run: echo what} ] }
+  job16: { needs: [job15], runs-on: ubuntu-24.04, steps: [ {run: echo what} ] }
+  job17: { needs: [job16], runs-on: ubuntu-24.04, steps: [ {run: echo what} ] }
+  job18: { needs: [job17], runs-on: ubuntu-24.04, steps: [ {run: echo what} ] }
+  job19: { needs: [job18], runs-on: ubuntu-24.04, steps: [ {run: echo what} ] }
+  job20: { needs: [job19], runs-on: ubuntu-24.04, steps: [ {run: echo what} ] }
+  job21: { needs: [job20], runs-on: ubuntu-24.04, steps: [ {run: echo what} ] }
+  job22: { needs: [job21], runs-on: ubuntu-24.04, steps: [ {run: echo what} ] }
+  job23: { needs: [job22], runs-on: ubuntu-24.04, steps: [ {run: echo what} ] }
+  job24: { needs: [job23], runs-on: ubuntu-24.04, steps: [ {run: echo what} ] }
+  job25: { needs: [job24], runs-on: ubuntu-24.04, steps: [ {run: echo what} ] }
+  job26: { needs: [job25], runs-on: ubuntu-24.04, steps: [ {run: echo what} ] }
+  job27: { needs: [job26], runs-on: ubuntu-24.04, steps: [ {run: echo what} ] }
+  job28: { needs: [job27], runs-on: ubuntu-24.04, steps: [ {run: echo what} ] }
+  job29: { needs: [job28], runs-on: ubuntu-24.04, steps: [ {run: echo what} ] }
+  job30: { needs: [job29], runs-on: ubuntu-24.04, steps: [ {run: echo what} ] }
+  job31: { needs: [job30], runs-on: ubuntu-24.04, steps: [ {run: echo what} ] }
+  job32: { needs: [job31], runs-on: ubuntu-24.04, steps: [ {run: echo what} ] }
+  job33: { needs: [job32], runs-on: ubuntu-24.04, steps: [ {run: echo what} ] }
+  job34: { needs: [job33], runs-on: ubuntu-24.04, steps: [ {run: echo what} ] }
+  job35: { needs: [job34], runs-on: ubuntu-24.04, steps: [ {run: echo what} ] }
+  job36: { needs: [job35], runs-on: ubuntu-24.04, steps: [ {run: echo what} ] }
+  job37: { needs: [job36], runs-on: ubuntu-24.04, steps: [ {run: echo what} ] }
+  job38: { needs: [job37], runs-on: ubuntu-24.04, steps: [ {run: echo what} ] }
+  job39: { needs: [job38], runs-on: ubuntu-24.04, steps: [ {run: echo what} ] }
+  job40: { needs: [job39], runs-on: ubuntu-24.04, steps: [ {run: echo what} ] }
+  job41: { needs: [job40], runs-on: ubuntu-24.04, steps: [ {run: echo what} ] }
+  job42: { needs: [job41], runs-on: ubuntu-24.04, steps: [ {run: echo what} ] }
+  job43: { needs: [job42], runs-on: ubuntu-24.04, steps: [ {run: echo what} ] }
+  job44: { needs: [job43], runs-on: ubuntu-24.04, steps: [ {run: echo what} ] }
+  job45: { needs: [job44], runs-on: ubuntu-24.04, steps: [ {run: echo what} ] }
+  job46: { needs: [job45], runs-on: ubuntu-24.04, steps: [ {run: echo what} ] }
+  job47: { needs: [job46], runs-on: ubuntu-24.04, steps: [ {run: echo what} ] }
+  job48: { needs: [job47], runs-on: ubuntu-24.04, steps: [ {run: echo what} ] }
+  job49: { needs: [job48], runs-on: ubuntu-24.04, steps: [ {run: echo what} ] }
+  job50: { needs: [job49], runs-on: ubuntu-24.04, steps: [ {run: echo what} ] }
+  job51: { needs: [job50], runs-on: ubuntu-24.04, steps: [ {run: echo what} ] }
+  job52: { needs: [job51], runs-on: ubuntu-24.04, steps: [ {run: echo what} ] }
+  
