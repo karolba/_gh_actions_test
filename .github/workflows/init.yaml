@@ -3,9 +3,30 @@ on:
     branches: ['main']
 
 jobs:
-  "_1":
+  job1:
     runs-on: ubuntu-24.04
     steps:
       - run: echo what
-  "_2": { name: "${{ fromJSON('\"test\"') }}", needs: [_1], uses: ./.github/workflows/one-job.yaml }
-  "_3": { needs: [_2], uses: ./.github/workflows/one-job.yaml }
+  job2:
+    runs-on: ubuntu-24.04
+    needs: [job1]
+    if: fromJSON('false')
+    strategy:
+      matrix:
+        include: ${{ fromJSON('[]') }}
+    steps:
+      - run: echo whatt
+  job3:
+    runs-on: ubuntu-24.04
+    needs: [job2]
+    if: fromJSON('false')
+    strategy:
+      matrix:
+        include: ${{ fromJSON('[]') }}
+    steps:
+      - run: echo whatt
+  job4:
+    runs-on: ubuntu-24.04
+    needs: [job3]
+    steps:
+      - run: echo whatt
