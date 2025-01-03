@@ -1,0 +1,51 @@
+on:
+  workflow_call:
+    inputs:
+      config:
+        type: string
+        default: |
+          {
+            "name": "myname",
+            "run": "echo what"
+          }
+
+jobs:
+  a:
+    if: ${{ !failure() && !cancelled() }}
+    name: "a ${{ fromJSON(inputs.config).name }}"
+    runs-on: ubuntu-latest
+    steps:
+      - name: "step ${{ fromJSON(inputs.config).name }}"
+        run: "${{ fromJSON(inputs.config).run }}"
+  b:
+    needs: [a]
+    if: ${{ !failure() && !cancelled() }}
+    name: "b ${{ fromJSON(inputs.config).name }}"
+    runs-on: ubuntu-latest
+    steps:
+      - name: "step ${{ fromJSON(inputs.config).name }}"
+        run: "${{ fromJSON(inputs.config).run }}"
+  c:
+    needs: [b]
+    if: ${{ !failure() && !cancelled() }}
+    name: "c ${{ fromJSON(inputs.config).name }}"
+    runs-on: ubuntu-latest
+    steps:
+      - name: "step ${{ fromJSON(inputs.config).name }}"
+        run: "${{ fromJSON(inputs.config).run }}"
+  d:
+    needs: [c]
+    if: ${{ !failure() && !cancelled() }}
+    name: "d ${{ fromJSON(inputs.config).name }}"
+    runs-on: ubuntu-latest
+    steps:
+      - name: "step ${{ fromJSON(inputs.config).name }}"
+        run: "${{ fromJSON(inputs.config).run }}"
+  e:
+    needs: [d]
+    if: ${{ !failure() && !cancelled() }}
+    name: "e ${{ fromJSON(inputs.config).name }}"
+    runs-on: ubuntu-latest
+    steps:
+      - name: "step ${{ fromJSON(inputs.config).name }}"
+        run: "${{ fromJSON(inputs.config).run }}"
