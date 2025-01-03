@@ -10,22 +10,24 @@ jobs:
   job2:
     runs-on: ubuntu-24.04
     needs: [job1]
-    if: fromJSON('false')
+    if: ${{ !cancelled() && !failure() && fromJSON('false') }}
     strategy:
       matrix:
         include: ${{ fromJSON('[]') }}
     steps:
       - run: echo whatt
   job3:
+    name: ${{ fromJSON('""') }}
     runs-on: ubuntu-24.04
     needs: [job2]
-    if: fromJSON('false')
+    if: ${{ !cancelled() && !failure() && fromJSON('false') }}
     strategy:
       matrix:
         include: ${{ fromJSON('[]') }}
     steps:
       - run: echo whatt
   job4:
+    if: ${{ !cancelled() && !failure() }}
     runs-on: ubuntu-24.04
     needs: [job3]
     steps:
