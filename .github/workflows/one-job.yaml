@@ -1,0 +1,18 @@
+on:
+  workflow_call:
+    inputs:
+      config:
+        type: string
+        default: |
+          {
+            "name": "myname",
+            "run": "echo what"
+          }
+
+jobs:
+  huh:
+    name: "job ${{ fromJSON(inputs.config).name }}"
+    runs-on: ubuntu-latest
+    steps:
+      - name: "step ${{ fromJSON(inputs.config).name }}"
+        run: "${{ fromJSON(inputs.config).run }}"
